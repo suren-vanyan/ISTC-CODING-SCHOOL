@@ -56,37 +56,66 @@ namespace Lesson1_Person
             this._sex = sex;
         }
 
-        public void Show()
+        
+        
+        public void ShowFirstName()
         {
-            Console.WriteLine($"firstname:[{_firstName}],lasname:[{_lastName}]," +
-                               $"age:[{_age}] ,weight:[{_weight}],sex:[{_sex}]");
+            Console.WriteLine($"firstname:{_firstName}");
+        }
 
-            Console.WriteLine(new string('-', 50));
+        public void ShowLastName()
+        {
+            Console.WriteLine($"lastname:{_lastName}");
+        }
+
+        public void ShowAge()
+        {
+            Console.WriteLine($"Age:{_age}");
+        }
+
+        public void ShowWeight()
+        {
+            Console.WriteLine($"Weight:{_weight}");
+        }
+
+        public void ShowSex()
+        {
+            Console.WriteLine($"Sex:{_sex}");
         }
     }
+
     class Program
     {
         static void Main(string[] args)
         {
-            Person person = new Person();
+            
             Person person1 = new Person("Adam", "Smith", 295, 80, "Male");
-            Person person2 = new Person("Karl", "Marks", 200, 70, "Male");
-            Person person3 = new Person("Marie", "Curie", 151, 58, "Female");
+          
 
-            person.Show();
-            person.MutateFirstName("David");
-            person.MutateLastName("Ricardo");
-            person.Show();
+            //Show field of instance person1
 
-            person1.Show();
-            person1.MutateAge(85);
-            person1.MutateWeight(98);
-            person1.Show();
+            person1.ShowFirstName();
+            person1.ShowLastName();
+            person1.ShowAge();
+            person1.ShowWeight();
+            person1.ShowSex();
 
-            person2.Show();
-            person3.Show();
+            Console.WriteLine(new string('*',50));
+            //Mutate fileds of instance person1
+            person1.MutateFirstName("Karls");
+            person1.MutateLastName("Marks");
+            person1.MutateAge(200);
+            person1.MutateAge(70);
+            person1.MutateSex("Male");
 
-
+            //Show mutate fields of instance person1
+            Console.WriteLine("After chnage");
+            person1.ShowFirstName();
+            person1.ShowLastName();
+            person1.ShowAge();
+            person1.ShowWeight();
+            person1.ShowSex();
+           
         }
     }
 }
