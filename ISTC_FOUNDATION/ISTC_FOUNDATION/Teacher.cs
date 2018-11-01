@@ -31,7 +31,7 @@ namespace ISTC_FOUNDATION
         public Teacher(string firstName, string lastName, DateTime dateOfBirth, Gender gender, string work)
         {
             FirstName = firstName;
-            LastName = _lastName;
+            LastName = lastName;
             DateOfBirth = dateOfBirth;
             Gender = gender;
             Work = work;
