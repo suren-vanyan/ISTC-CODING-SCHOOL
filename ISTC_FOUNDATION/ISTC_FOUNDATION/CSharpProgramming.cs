@@ -28,20 +28,11 @@ namespace ISTC_FOUNDATION
             CourseTotalPrice = 240000;//$$$$$
             teachers = new Teacher[2]
             {
-                new Teacher("Tigran","Vardanyan",new DateTime(1987,10,25),Gender.Male,"ISTC"),
+                new Teacher("Tigran","Vardanyan",new DateTime(1992, 08, 31),Gender.Male,"ISTC"),
                 new Teacher("Vanik", "Hakobyan", new DateTime(1992, 08, 31), Gender.Male,"BETCONSTRUCT")
             };
         }
 
-        //public CSharpProgramming()
-        //{
-
-        //}
-        //public CSharpProgramming(Stage stage, Student[] participants)
-        //{
-        //    this._stage = stage;
-        //    this.participants = participants;
-        //}
 
         #endregion
 

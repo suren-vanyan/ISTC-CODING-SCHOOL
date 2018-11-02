@@ -39,17 +39,5 @@ namespace ISTC_FOUNDATION
         }
 
 
-        //when a student does not want to continue his studies
-        public Student()
-        {
-            FirstName = string.Empty;
-            LastName = string.Empty;
-            Age = 0;
-            Gender = Gender.Unknown;
-            Phone = string.Empty;
-        }
-
-       
-
     }
 }
