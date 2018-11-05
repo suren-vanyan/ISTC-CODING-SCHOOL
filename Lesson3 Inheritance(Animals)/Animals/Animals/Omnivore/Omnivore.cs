@@ -7,7 +7,7 @@ namespace Animals.Omnivore
 {
     class Omnivore : Animal
     {
-        public Omnivore(string name, int speed):base(name,speed)
+        public Omnivore(string name, int speed,int age):base(name,speed,age)
         {
 
         }

@@ -5,14 +5,10 @@ using System.Text;
 namespace Animals.Omnivore
 {
     class Man:Omnivore
-    {
-        public int Age { get; set; }
-
-        public Man(int age,string name, int speed):base(name,speed)
+    {      
+        public Man(string name, int speed,int age):base(name,speed,age)
         {
-            Age = age;
+           
         }
-
-
     }
 }

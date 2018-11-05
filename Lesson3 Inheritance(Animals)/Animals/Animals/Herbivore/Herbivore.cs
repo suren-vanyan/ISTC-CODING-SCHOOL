@@ -11,8 +11,8 @@ namespace Animals.Herbivore
         public int Legs { get; set; }
         public string Fur { get; set; }
 
-        public Herbivore(bool canWalk, int legs, string fur, string name, int speed)
-                         : base(name, speed)
+        public Herbivore(bool canWalk, int legs, string fur, string name, int speed,int age)
+                                                                         : base(name, speed,age)
         {
             CanWalk = canWalk;
             Legs = legs;

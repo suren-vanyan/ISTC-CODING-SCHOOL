@@ -8,11 +8,13 @@ namespace Animals.Animals
     {
         public string Name { get; set; }
         public int Speed { get; set; }
+        public int Age { get; set; }
 
-        public Animal(string name, int speed)
+        public Animal(string name, int speed,int age)
         {
             Name = name;
             Speed = speed;
+            Age = age;
         }
 
         public string Sleep(bool sleep)

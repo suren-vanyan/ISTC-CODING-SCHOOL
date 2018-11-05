@@ -12,7 +12,8 @@ namespace Animals.Carnivore
         public string Fur { get; set; }
         
 
-        public Carnivore(bool canWalk,int legs,string fur,string name,int speed):base(name,speed)
+        public Carnivore(bool canWalk,int legs,string fur,string name,int speed,int age)
+                                                                    :base(name,speed,age)
         {
             CanWalk = canWalk;
             Legs = legs;
