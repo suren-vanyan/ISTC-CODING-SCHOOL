@@ -16,7 +16,9 @@ namespace ClassRoomApp
 
             Console.WriteLine($"There are {classRoom.GetCountOfPupils()} pupils in the Classroom");
             Console.WriteLine($"{new string('*',50)}\n");
-           
+
+            // I did experiments in project,to reinforce knowledge of Polymorphism
+
             foreach (Pupil pupil in classRoom.pupils)
             {
                 if(pupil is ExcellentPupil e)
