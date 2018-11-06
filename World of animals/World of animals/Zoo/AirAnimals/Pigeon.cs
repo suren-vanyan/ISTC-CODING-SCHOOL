@@ -11,8 +11,6 @@ namespace WorldՕfAnimals.Zoo.AirAnimals
             return string.Format($"{Name} eats {Food}");
         }
 
-        public override int BodyTemperature { get => base.BodyTemperature; set => base.BodyTemperature = value; }
-
         public override string LivingPlace()
         {
           return  $"To know where he lives {Name} go to https://en.wikipedia.org/wiki/Columba_(genus";
@@ -20,7 +18,7 @@ namespace WorldՕfAnimals.Zoo.AirAnimals
 
         public override string Move()
         {
-            if (Energy > 5)
+            if (Energy > 4)
             {
                 return string.Format($"{this.Name}  can walks");
             }
@@ -32,12 +30,12 @@ namespace WorldՕfAnimals.Zoo.AirAnimals
 
         public override object GetTypes()
         {
-            return this;
+            return this.GetType();
         }
 
         public override string ToString()
         {
-            return string.Format($"His name is {Name}․He is {Age} Years Old \nEnergy:{Move()} \n:{Eat()} \n:{LivingPlace()} ");
+            return string.Format($"His name is {Name}․He is {Age} Years Old․\nColor:{Color} \nEnergy:{Move()} \n{Eat()} \n{LivingPlace()} \nBodyTemperature:{BodyTemperature}");
         }
 
     }

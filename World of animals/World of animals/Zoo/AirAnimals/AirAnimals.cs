@@ -17,10 +17,12 @@ namespace WorldՕfAnimals.Zoo.AirAnimals
             get => _bodyTemperature;
             set
             {
-                if(value>=40 && value <= 70)
+                if (value >= 40 && value <= 70)
                 {
                     _bodyTemperature = value;
                 }
+                else
+                    Console.WriteLine($"{this.Name} temperature does not match");
             }
 
         }

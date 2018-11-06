@@ -6,6 +6,12 @@ namespace WorldՕfAnimals.Zoo
 {
     class Animals
     {
+        public static int AnimalCount { get; set; }
+        public Animals()
+        {
+            AnimalCount++;
+        }
+
         public string Name { get; set; }
         public int Age { get; set; }
         public int Energy { get; set; }

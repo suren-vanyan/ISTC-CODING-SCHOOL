@@ -7,7 +7,8 @@ namespace WorldՕfAnimals.Zoo.LandAnimals
     class LandAnimals:Animals
     {
         public bool Fur { get; set; }
-        public bool Beak { get; set; }
+        public bool CanWalk { get; set; }
+
 
     }
 }
