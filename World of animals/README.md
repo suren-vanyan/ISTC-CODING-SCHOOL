@@ -1,3 +1,2 @@
-# Animals Diagram
-
-![screenshot_1](https://user-images.githubusercontent.com/38188753/48021603-6dc51300-e152-11e8-96ca-25a32306a1b8.png)
+<h1>My beasts!</h1>
+<img class="irc_mi" src="https://i.ytimg.com/vi/6ST-fqUOKM4/maxresdefault.jpg" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" width="650" height="500" style="margin-top: 91px;" alt="Картинки по запросу мультфильмы про животных">
