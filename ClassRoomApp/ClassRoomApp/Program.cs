@@ -6,6 +6,7 @@ namespace ClassRoomApp
     {
         static void Main(string[] args)
         {
+            //Upcast
             Pupil firstExcellentPupil = new ExcellentPupil("Grady", "Buch", ConsoleColor.Red);          
             Pupil sexondExcellentPupil = new ExcellentPupil("Jeffrey", "Richter", ConsoleColor.Green);
             Pupil goodPupil = new GoodPupil("Herbert", "Shildt", ConsoleColor.Blue);
@@ -21,6 +22,7 @@ namespace ClassRoomApp
 
             foreach (Pupil pupil in classRoom.pupils)
             {
+                //DownCast
                 if(pupil is ExcellentPupil e)
                 {
                     e.Study();
@@ -30,7 +32,9 @@ namespace ClassRoomApp
                     Console.WriteLine($"{new string('*', 50)}\n");
                   //  Console.ResetColor();
                 }
-                else if((pupil as GoodPupil) != null)
+
+                //DownCast
+                else if ((pupil as GoodPupil) != null)
                 {
                     pupil.Study();
                     pupil.Read();
@@ -39,7 +43,9 @@ namespace ClassRoomApp
                     Console.WriteLine($"{new string('*', 50)}\n");
                    // Console.ResetColor();
                 }
-               else if(pupil is BadPupil)
+
+                //DownCast
+                else if (pupil is BadPupil)
                 {
                     Pupil anotherPupil = (Pupil)pupil;
                     anotherPupil.Study();
