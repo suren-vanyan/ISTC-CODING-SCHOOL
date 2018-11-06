@@ -4,5 +4,5 @@
 ![27_c-sharp-logo-filled](https://user-images.githubusercontent.com/38188753/48022339-54bd6180-e154-11e8-922b-7c30c7dfbe0f.png)
 
 <div>
-     <img src="https://user-images.githubusercontent.com/38188753/48022339-54bd6180-e154-11e8-922b-7c30c7dfbe0f.png" alt="Зимняя равнина" style="float:left; margin-right:5px;" />
+     <img src="https://user-images.githubusercontent.com/38188753/48022339-54bd6180-e154-11e8-922b-7c30c7dfbe0f.png" alt="Зимняя равнина" style="float:left; margin-right:1px;" />
 </div>
