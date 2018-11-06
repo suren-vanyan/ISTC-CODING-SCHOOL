@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.WaterAnimals
 {
-    class Shark
+    class Shark:WaterAnimals
     {
         //https://en.wikipedia.org/wiki/Great_white_shark
     }

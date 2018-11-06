@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.LandAnimals
 {
-    class Marten
+    class Marten:LandAnimals
     {
         //https://en.wikipedia.org/wiki/Marten
 

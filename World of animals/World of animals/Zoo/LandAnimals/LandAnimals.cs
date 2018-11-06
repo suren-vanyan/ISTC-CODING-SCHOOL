@@ -4,7 +4,10 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.LandAnimals
 {
-    class LandAnimals
+    class LandAnimals:Animals
     {
+        public bool Fur { get; set; }
+        public bool Beak { get; set; }
+
     }
 }

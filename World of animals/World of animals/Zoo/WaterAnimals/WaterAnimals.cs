@@ -4,7 +4,8 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.WaterAnimals
 {
-    class WaterAnimals
+    class WaterAnimals:Animals
     {
+        
     }
 }

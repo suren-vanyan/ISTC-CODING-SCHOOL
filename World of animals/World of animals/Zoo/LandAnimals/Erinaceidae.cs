@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.LandAnimals
 {
-    class Erinaceidae
+    class Erinaceidae:LandAnimals
     {
         //https://en.wikipedia.org/wiki/Erinaceidae
     }

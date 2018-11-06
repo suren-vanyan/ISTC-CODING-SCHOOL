@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WorldՕfAnimals.Zoo.AirAnimals
+namespace WorldՕfAnimals.Zoo
 {
-    class Pigeon:AirAnimals
+
+    enum Gender
     {
+        Male,
+        Female,
     }
+
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.WaterAnimals
 {
-    class EarlessSeal
+    class EarlessSeal:WaterAnimals
     {
         //https://en.wikipedia.org/wiki/Earless_seal
 

@@ -4,7 +4,8 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.AirAnimals
 {
-    class Falcon
+    class Falcon:AirAnimals
     {
+
     }
 }

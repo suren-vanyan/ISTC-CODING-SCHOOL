@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.AirAnimals
 {
-    class Eagle
+    class Eagle:AirAnimals
     {
     }
 }

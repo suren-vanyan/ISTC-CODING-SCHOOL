@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.WaterAnimals
 {
-    class BlueWhale
+    class BlueWhale:WaterAnimals
     {
         //https://en.wikipedia.org/wiki/Blue_whale
     }

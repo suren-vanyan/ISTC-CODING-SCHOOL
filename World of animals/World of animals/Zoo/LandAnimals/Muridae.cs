@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WorldՕfAnimals.Zoo.LandAnimals
 {
-    class Muridae
+    class Muridae:LandAnimals
     {
         //https://en.wikipedia.org/wiki/Muridae
 
