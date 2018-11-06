@@ -3,5 +3,5 @@
 
 
 <div>
-     <img src="https://www.google.am/search?q=C%23+logo&safe=active&rlz=1C1CHBF_enAM807AM807&source=lnms&tbm=isch&sa=X&ved=0ahUKEwio9r-bhr_eAhVHiiwKHfZ_BAEQ_AUIDigB&biw=1366&bih=626#imgrc=Jr9mR7UqsJlESM:" alt="C#" style="float:center; margin-right:1px;" />
+     <img src="https://www.google.am/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjKiYqkh7_eAhXB_ywKHVzJBT4QjRx6BAgBEAU&url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fvisualstudio%2F&psig=AOvVaw3odleZdwi4IKYxsmg25VfN&ust=1541569012888279" alt="C#" style="float:center; margin-right:1px;" />
 <div>
