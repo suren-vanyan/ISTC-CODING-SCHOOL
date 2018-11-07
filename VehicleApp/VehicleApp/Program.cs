@@ -7,7 +7,7 @@ namespace VehicleApp
     {
         static void Main(string[] args)
         {
-            //UpCast
+            //UpCast 
             Vehicle[] vehicles = new Vehicle[3];
             vehicles[0] = new Ship(10, 20, 30, 100000, 90, new DateTime(2005, 05, 11), 50, "PORTO BELLO ");
             vehicles[1] = new Car(15, 25, 35, 20000, 200, new DateTime(2011, 01, 26), 250, 300);
