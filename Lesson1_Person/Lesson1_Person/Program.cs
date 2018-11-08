@@ -18,6 +18,7 @@ namespace Lesson1_Person
             Person person31 = new Person("string", "string", 10);
             Person person32 = new Person(10, "string", "string");
 
+
             Person person4 = new Person(Gender.Unknown, "string", "string",20);
 
             //Аpproach N:1 from the book Jeffrey Richter

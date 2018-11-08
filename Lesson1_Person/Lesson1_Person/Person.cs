@@ -187,6 +187,7 @@ namespace Lesson1_Person
         //    _gender = gender;
         //}
 
+
         public override string ToString()
         {
             return string.Format($"FirstName{FirstName},LastName{LastName},Age{Age},Weight{Weight},{Gender},");
