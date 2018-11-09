@@ -2,6 +2,18 @@
 * Аpproach N:1 from the book Jeffrey Richter
 
 ```C#
+
+        public Person()
+        {
+            Console.WriteLine("Default ctor");
+
+            _firstName = "Jeffrey";
+            _lastName = "Richter";
+            _age = 50;
+            _weight = 80;
+            _gender = Gender.Unknown;
+        }
+        
        public Person(string firstName, string lasnName, int weight, Gender gender) : this()
         {
             _firstName = firstName;
