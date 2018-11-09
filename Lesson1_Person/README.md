@@ -18,35 +18,70 @@
             _gender = gender;
             _weight = weight;
 
-        }
-     
-
-parallelepiped paral = new parallelepiped(1.5f, 5, 15, 800); //parameters
-Console.WriteLine(paral.areaGet());     //area parallelogram
-Console.WriteLine(paral.massGet());     //mass parallelogram
-Console.WriteLine(paral.volumeGet());   //volume parallelogram
-paral.MoveBy(4.1f, 4f, 2.9f);
-paral.MoveTo(5.3f,1.1f,3.8f);
+        }    
  ```   
+* Approach N:2(descending)
+ //I specifically did this to avoid conflict
+        public Person(Gender gender, string firstName, string lastName, int weight, int age)
+                        : this(age: age, gender: gender, firstName: firstName, lastName: lastName)
+        {
+            _weight = weight;
+        }
 
+        public Person(Gender gender, string firstName, string lastName, int age) 
+        : this(gender, lastName: lastName, firstName:firstName)
+        {
+            _age = age;
+        }
+       ......
+        public Person(Gender gender) : this()
+        {
+            _gender = gender;
+        }
 
+*Аpproach N:3 from the book Тroelsen  (ascending)
+```C#
+        public Person(string firstName, int age, string lastName, int weight, Gender gender)
+        {
+
+            _firstName = firstName;
+            _lastName = lastName;
+            _age = age;
+            _weight = weight;
+            _gender = gender;
+        }
+        
+         public Person(string firstName, int age, string lastName, int weight) : this(firstName, age, lastName, weight, default(Gender))
+        {
+
+            Console.WriteLine(" talking string,int,string,int");
+            //_firstName = firstName;   
+            //_lastName=lastName;
+            //_age = age;
+
+        }
+
+        public Person(int age, string firstName, string lastName) : this(firstName, age, lastName, default(int))
+        {
+            Console.WriteLine(" talking int,string,string");
+            //_firstName = firstName;       
+            //_age = age;
+            //_lastName=lastName;
+        }
+        
+        .......
+        
+          public Person(string firstName) : this(firstName, default(int))
+        {
+
+            Console.WriteLine(" talking string");
+            //  _firstName = firstName;
+        }
+ ```        
 
 ```C#
-ellipsoidal elips = new ellipsoidal(5, 1.2f, 8, 1200); //parameters
-Console.WriteLine(elips.areaGet());    // area ellipsoidal
-Console.WriteLine(elips.massGet());    // mass ellipsoidal
-Console.WriteLine(elips.volumeGet());  // volume ellipsoidal
-elips.MoveBy(5f, 1.5f, 4.1f);//axis movement
-elips.MoveTo(6.7f, 4f, 3f);  //axis movement
 
-parallelepiped paral = new parallelepiped(1.5f, 5, 15, 800); //parameters
-Console.WriteLine(paral.areaGet());     //area parallelogram
-Console.WriteLine(paral.massGet());     //mass parallelogram
-Console.WriteLine(paral.volumeGet());   //volume parallelogram
-paral.MoveBy(4.1f, 4f, 2.9f);
-paral.MoveTo(5.3f,1.1f,3.8f);
- ```        
-            
+ ```             
  
 #### Dimensional space
  
