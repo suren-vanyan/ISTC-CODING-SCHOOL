@@ -85,7 +85,7 @@ namespace Lesson1_Person
             _firstName = firstName;
         }
 
-        public Person(string lastName, Gender gender)
+        public Person(string lastName, Gender gender):this(gender)
         {
             _lastName = LastName;
 
