@@ -21,8 +21,8 @@
         }    
  ```   
 * Approach N:2(descending)
+
  I specifically did this to avoid conflict
- 
         public Person(Gender gender, string firstName, string lastName, int weight, int age)
                         : this(age: age, gender: gender, firstName: firstName, lastName: lastName)
         {
