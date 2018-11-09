@@ -87,13 +87,14 @@ namespace Lesson1_Person
 
         public Person(string lastName,Gender gender)
         {
-            _gender = gender;
+            _lastName = LastName;
+           
         }
 
-        //public Person(string LastName) : this()
-        //{
-        //    _lastName = LastName;
-        //}
+        public Person(Gender gender) : this()
+        {
+            _gender = gender;
+        }
 
         #endregion
 
