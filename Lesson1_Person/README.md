@@ -1,12 +1,34 @@
 # This keyword
-* Shape3D in have ellipsoidal , dimensional and parallelepiped
+* Аpproach N:1 from the book Jeffrey Richter
 
-<p align="center">
-<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRu1EuBdKrtRTT1YSqnPlqoTqRTotlUaiBUb_nWYMIfRuhdTgwh">
-</p>
-<p align="center">
-<img src="https://i.gyazo.com/de98ec6468ce30475d73768ef314992c.png">
-</p>
+```C#
+       public Person(string firstName, string lasnName, int weight, Gender gender) : this()
+        {
+            _firstName = firstName;
+            _lastName = lasnName;
+            _weight = weight;
+            _gender = gender;
+        }
+
+        public Person(string firstName, string lasnName, int age, int weight, Gender gender) : this()
+        {
+            _firstName = firstName;
+            _lastName = lasnName;
+            _age = age;
+            _gender = gender;
+            _weight = weight;
+
+        }
+     
+
+parallelepiped paral = new parallelepiped(1.5f, 5, 15, 800); //parameters
+Console.WriteLine(paral.areaGet());     //area parallelogram
+Console.WriteLine(paral.massGet());     //mass parallelogram
+Console.WriteLine(paral.volumeGet());   //volume parallelogram
+paral.MoveBy(4.1f, 4f, 2.9f);
+paral.MoveTo(5.3f,1.1f,3.8f);
+ ```   
+
 
 
 ```C#
