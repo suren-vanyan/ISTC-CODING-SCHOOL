@@ -34,7 +34,7 @@ namespace Lesson1_Person
             _gender = default(Gender);
         }
 
-        public Person(string firstName,string lasnName):this()
+        public Person(string firstName, string lasnName) : this()
         {
             _firstName = firstName;
             _lastName = lasnName;
@@ -46,7 +46,7 @@ namespace Lesson1_Person
             _lastName = lasnName;
         }
 
-        public Person(string firstName ,string lasnName,int weight, Gender gender) : this()
+        public Person(string firstName, string lasnName, int weight, Gender gender) : this()
         {
             _firstName = firstName;
             _lastName = lasnName;
@@ -54,14 +54,14 @@ namespace Lesson1_Person
             _gender = gender;
         }
 
-        public Person(string firstName, string lasnName,int age , int weight, Gender gender) : this()
+        public Person(string firstName, string lasnName, int age, int weight, Gender gender) : this()
         {
             _firstName = firstName;
             _lastName = lasnName;
             _age = age;
             _gender = gender;
             _weight = weight;
-            
+
         }
         #endregion
 
@@ -69,26 +69,26 @@ namespace Lesson1_Person
         #region  Approach N:2(descending)
 
         //I specifically did this to avoid conflict
-        public Person(Gender gender,string firstName,string lastName,int weight,int age ) 
-                        :this(age:age, gender:gender,firstName:firstName,lastName:lastName)
+        public Person(Gender gender, string firstName, string lastName, int weight, int age)
+                        : this(age: age, gender: gender, firstName: firstName, lastName: lastName)
         {
             _weight = weight;
         }
 
-        public Person(Gender gender, string firstName, string lastName,  int age) : this(gender, lastName:lastName,firstName:firstName)
+        public Person(Gender gender, string firstName, string lastName, int age) : this(gender, lastName: lastName, firstName: firstName)
         {
             _age = age;
         }
 
-        public Person(Gender gender, string firstName, string lastName):this(lastName:lastName,gender:gender) 
+        public Person(Gender gender, string firstName, string lastName) : this(lastName: lastName, gender: gender)
         {
             _firstName = firstName;
         }
 
-        public Person(string lastName,Gender gender)
+        public Person(string lastName, Gender gender)
         {
             _lastName = LastName;
-           
+
         }
 
         public Person(Gender gender) : this()
@@ -103,7 +103,7 @@ namespace Lesson1_Person
 
         public Person(string firstName, int age, string lastName, int weight, Gender gender)
         {
-            
+
             _firstName = firstName;
             _lastName = lastName;
             _age = age;
@@ -113,7 +113,7 @@ namespace Lesson1_Person
 
         public Person(string firstName, int age, string lastName, int weight) : this(firstName, age, lastName, weight, default(Gender))
         {
-            
+
             Console.WriteLine(" talking string,int,string,int");
             //_firstName = firstName;   
             //_lastName=lastName;
@@ -130,7 +130,7 @@ namespace Lesson1_Person
         }
 
         //I specifically did this
-        public Person( string firstName,  string lastName, int age) : this(firstName, lastName:lastName,age:age,weight:default(int))
+        public Person(string firstName, string lastName, int age) : this(firstName, lastName: lastName, age: age, weight: default(int))
         {
             Console.WriteLine(" talking string,string,int ");
             //_firstName = firstName;       
@@ -138,25 +138,25 @@ namespace Lesson1_Person
             //_lastName=lastName;
         }
 
-        public Person(string firstName, int age, string lastName) : this( age:age, firstName:firstName,weight:default(int) ,lastName:lastName)
+        public Person(string firstName, int age, string lastName) : this(age: age, firstName: firstName, weight: default(int), lastName: lastName)
         {
-            
+
             Console.WriteLine(" talking string,int,string");
             //_firstName = firstName;       
             //_age = age;
             //_lastName=lastName;
         }
 
-        public Person(int age,string lastName)
+        public Person(int age, string lastName)
         {
-          
+
             Console.WriteLine(" talking int,string");
             //_age = age;
             //_lastName=lastName;
         }
         public Person(string firstName, int age) : this(firstName, age, string.Empty)
         {
-           
+
             Console.WriteLine(" talking string,int");
             //_firstName = firstName;
             //_age = age;
@@ -164,13 +164,13 @@ namespace Lesson1_Person
 
         public Person(int age) : this(string.Empty, age)
         {
-           
+
             Console.WriteLine(" talking int");
             // _age = age;
         }
         public Person(string firstName) : this(firstName, default(int))
         {
-            
+
             Console.WriteLine(" talking string");
             //  _firstName = firstName;
         }
@@ -191,7 +191,7 @@ namespace Lesson1_Person
 
         public override string ToString()
         {
-            return string.Format($"FirstName{FirstName},LastName{LastName},Age{Age},Weight{Weight},{Gender},");
+            return string.Format($"{this.GetType()} FirstName{FirstName},LastName{LastName},Age{Age},Weight{Weight},Gender {(int)Gender},");
         }
 
 
