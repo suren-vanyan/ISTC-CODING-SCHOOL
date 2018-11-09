@@ -21,9 +21,7 @@
         }    
  ```   
 * Approach N:2(descending)
-
-I specifically did this to avoid conflict
-
+```C#
         public Person(Gender gender, string firstName, string lastName, int weight, int age)
                         : this(age: age, gender: gender, firstName: firstName, lastName: lastName)
         {
@@ -43,6 +41,7 @@ I specifically did this to avoid conflict
 ```
 
 *Аpproach N:3 from the book Тroelsen  (ascending)
+
 ```C#
         public Person(string firstName, int age, string lastName, int weight, Gender gender)
         {
@@ -82,9 +81,7 @@ I specifically did this to avoid conflict
         }
  ```        
 
-```C#
-
- ```             
+           
  
 #### Dimensional space
  
