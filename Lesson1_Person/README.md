@@ -52,7 +52,7 @@
         }
 ```
 
-*Аpproach N:3 from the book Тroelsen  (ascending)
+* Аpproach N:3 from the book Тroelsen  (ascending)
 
 ```C#
         public Person(string firstName, int age, string lastName, int weight, Gender gender)
