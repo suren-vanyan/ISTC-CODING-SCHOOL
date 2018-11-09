@@ -31,7 +31,7 @@ namespace Lesson1_Person
             _lastName = "Richter";
             _age = 50;
             _weight = 80;
-            _gender = default(Gender);
+            _gender = Gender.Unknown;
         }
 
         public Person(string firstName, string lasnName) : this()
