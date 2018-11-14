@@ -23,16 +23,16 @@ namespace Lesson1_Person
         // Every writer says his approach is better
 
         #region Аpproach N:1 from the book Jeffrey Richter
-        public Person()
-        {
-            Console.WriteLine("Default ctor");
+        //public Person()
+        //{
+        //    Console.WriteLine("Default ctor");
 
-            _firstName = "Jeffrey";
-            _lastName = "Richter";
-            _age = 50;
-            _weight = 80;
-            _gender = Gender.Unknown;
-        }
+        //    _firstName = "Jeffrey";
+        //    _lastName = "Richter";
+        //    _age = 50;
+        //    _weight = 80;
+        //    _gender = Gender.Unknown;
+        //}
 
         public Person(string firstName, string lasnName) : this()
         {
@@ -176,17 +176,17 @@ namespace Lesson1_Person
         }
 
         #endregion
-
-        //Аpproach N:4
-        //is used as a default constructor
-        //public Person(string firstName="firstName",string lastName="lastName",int age=default(int),int weight=default(int),Gender gender=default(Gender))
-        //{
-        //    _firstName = firstName;
-        //    _lastName = lastName;
-        //    _age = age;
-        //    _weight=weight;
-        //    _gender = gender;
-        //}
+      
+       // Аpproach N:4
+       //is used as a default constructor
+        public Person(string firstName="firstName",string lastName="lastName",int age=default(int),int weight=default(int),Gender gender=default(Gender))
+        {
+            _firstName = firstName;
+            _lastName = lastName;
+            _age = age;
+            _weight=weight;
+            _gender = gender;
+        }
 
 
         public override string ToString()
