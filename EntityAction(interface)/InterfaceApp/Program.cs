@@ -76,16 +76,16 @@ namespace EntityAction
 
 
             // This array can only contain types that
-            // implement the IPointy interface.
+            // implement the IInstinctiveАctions interface.
             IInstinctiveАctions[] instinctive = new IInstinctiveАctions[]
             {
                new Human(),new Dog(),new Hen(),new Monkey(),
             };
 
-          
+
 
             // This array can only contain types that
-            // implement the IPointy interface.
+            // implement the IPurposefulAction interface.
             IPurposefulAction[] purposefuls = new IPurposefulAction[]
             {
                 new Human(),new Human()//only human implemented interface
