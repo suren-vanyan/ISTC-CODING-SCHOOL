@@ -59,9 +59,10 @@ namespace ComplexNumber
         static void Main(string[] args)
         {
             Complex one = new Complex(1, 2);
+            Console.WriteLine(one);
             Complex two = new Complex(3, -5);
-           
-            Console.WriteLine(one+two);
+            Console.WriteLine(two);
+            //Console.WriteLine(one+two);
         }
     }
 }
