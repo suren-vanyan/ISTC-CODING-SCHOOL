@@ -17,8 +17,9 @@ namespace ComplexNumber
 
         public Complex ComplexMultiplication(Complex x, Complex y)
         {
-            return new Complex(x.RealNumber * y.RealNumber-x.ImaginaryUnit*y.ImaginaryUnit, 
-                x.RealNumber * y.ImaginaryUnit+y.RealNumber*x.ImaginaryUnit);
+            return new Complex(x.RealNumber * y.RealNumber - x.ImaginaryUnit * y.ImaginaryUnit,
+                x.RealNumber * y.ImaginaryUnit + y.RealNumber * x.ImaginaryUnit);
+           
         }
 
         public Complex ComplexDivision(Complex x, Complex y)
@@ -58,11 +59,16 @@ namespace ComplexNumber
     {        
         static void Main(string[] args)
         {
+            HelperClass helper = new HelperClass();
+
             Complex one = new Complex(1, 2);
             Console.WriteLine(one);
             Complex two = new Complex(3, -5);
             Console.WriteLine(two);
-            Console.WriteLine(one+two);
+
+            Complex complex = helper.ComplexAddition(one, two);
+            Console.WriteLine(complex);
+   
         }
     }
 }
