@@ -37,17 +37,17 @@ namespace ComplexNumber
 
     struct Complex
     {
-        private  double _realNumber;
-        private  double _imaginaryUnit;
+        private readonly double _realNumber;
+        private readonly double _imaginaryUnit;
         public Complex(double realNumber,double imaginaryUnit)
         {
             _realNumber = realNumber;
             _imaginaryUnit = imaginaryUnit;
         }
       
-        public double ImaginaryUnit { get { return _imaginaryUnit; } set { _imaginaryUnit = value; } }
+        public double ImaginaryUnit { get { return _imaginaryUnit; }  }
 
-        public double RealNumber { get { return _realNumber; } set { _realNumber = value; } }
+        public double RealNumber { get { return _realNumber; }  }
 
         public override string ToString()
         {
