@@ -51,7 +51,7 @@ namespace ComplexNumber
 
         public override string ToString()
         {
-            return $"{_realNumber}+{_imaginaryUnit}i";
+            return $"{_realNumber} {_imaginaryUnit}i";
         }
     }
     class Program
@@ -62,7 +62,7 @@ namespace ComplexNumber
             Console.WriteLine(one);
             Complex two = new Complex(3, -5);
             Console.WriteLine(two);
-            //Console.WriteLine(one+two);
+            Console.WriteLine(one+two);
         }
     }
 }
