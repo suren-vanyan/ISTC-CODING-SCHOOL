@@ -52,7 +52,7 @@ namespace ComplexNumber
 
         public override string ToString()
         {
-            return $"{_realNumber} {_imaginaryUnit}i";
+            return $"({_realNumber} {_imaginaryUnit}i)";
         }
     }
     class Program
@@ -66,9 +66,14 @@ namespace ComplexNumber
             Complex two = new Complex(3, -5);
             Console.WriteLine(two);
 
-            Complex complex = helper.ComplexAddition(one, two);
-            Console.WriteLine(complex);
-   
+            Complex add = helper.ComplexAddition(one, two);
+            Console.WriteLine($"Addition {one}+{two}={add} ");
+            Complex sub = helper.ComplexSubtraction(one, two);
+            Console.WriteLine($"Subtract {one}-{two}={sub} ");
+            Complex div = helper.ComplexDivision(one, two);
+            Console.WriteLine($"Division {one}/{two}={div} ");
+            Complex mul = helper.ComplexMultiplication(one, two);
+            Console.WriteLine($"Multiplication {one}*{two}={mul} ");
         }
     }
 }
