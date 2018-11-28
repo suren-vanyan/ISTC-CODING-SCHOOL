@@ -38,10 +38,10 @@ namespace CalculateUsingDelegate
         static void Main(string[] args)
         {
             CalculateHandler calculate = null;
-            CalculateHandler _add = new CalculateHandler(Add);//calculate += Add
+            CalculateHandler _add = new CalculateHandler(Add);
             CalculateHandler _sub = Subtract;
             CalculateHandler _mul = Multiplicate;
-            CalculateHandler _div = Divide;// calculate += Divide;
+            CalculateHandler _div = Divide;
             CalculateHandler _mod = Module;
 
             
@@ -55,7 +55,7 @@ namespace CalculateUsingDelegate
             calculate = (CalculateHandler)Delegate.Combine(calculate, _mul,_div,_mod);//use params
             calculate.Invoke(15, 7);
 
-            // (CalculateHandler)Delegate.Combine(calculate, new CalculateHandler(Divide));
+          
             double result = calculate(10.5, 6.3); // the return value is returned from the last method, all the other values is dropped
             Console.WriteLine(result+"\n");
 
