@@ -44,8 +44,10 @@ namespace CalculateUsingDelegate
             CalculateHandler _div = Divide;// calculate += Divide;
             CalculateHandler _mod = Module;
 
-            _add.Invoke(50, 10.2);
-            _mul.Invoke(80, 5);//and so on
+            
+            Console.WriteLine(_add.Invoke(50, 10.2)+"\n");
+            Console.WriteLine(_mul.Invoke(80, 5)+"\n");
+           //and so on
 
             calculate = _add; //(CalculateHandler)Delegate.Combine(_add);
             calculate += _sub;//when i use + = the following happens,called Delegate.Combine like next
@@ -55,7 +57,7 @@ namespace CalculateUsingDelegate
 
             // (CalculateHandler)Delegate.Combine(calculate, new CalculateHandler(Divide));
             double result = calculate(10.5, 6.3); // the return value is returned from the last method, all the other values is dropped
-            Console.WriteLine(result);
+            Console.WriteLine(result+"\n");
 
             //Alternatie versions Anonymous Metods and lambda expressions
             CalculateHandler add = null;
@@ -70,9 +72,11 @@ namespace CalculateUsingDelegate
             mul = (x, y) => x * y; //lambda expressions C# 3.0
             mod = (double x, double y) => { return x % y; };
 
-            add.Invoke(10, 3);
-            sub.Invoke(50, 12.3);
-            div(30.15, 5);//and so on
+           
+            Console.WriteLine(add.Invoke(10, 3));
+            Console.WriteLine(sub.Invoke(50, 12.3));
+            Console.WriteLine(div(30.15, 5));
+            //and so on
 
             CalculateHandler handler = null;
             handler = (CalculateHandler)Delegate.Combine(add, sub, div, mul, mod);//handler=add+sub+div+mul+mod
