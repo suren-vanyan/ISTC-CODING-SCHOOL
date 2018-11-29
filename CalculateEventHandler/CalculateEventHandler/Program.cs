@@ -9,10 +9,11 @@ namespace CalculateEventHandler
       
         static void Main(string[] args)
         {
-                     
+            Console.WriteLine("input letter: a\n");
             while (Console.ReadKey().KeyChar=='a')
             {
-                Console.WriteLine("Please Input first number");
+             
+                Console.WriteLine("\nPlease Input first number");
                 bool firstResult = int.TryParse(Console.ReadLine(), out int firstNumber);
                 firstNumber = firstResult ? firstNumber : int.MaxValue;
 
