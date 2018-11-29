@@ -71,6 +71,7 @@ namespace CalculateEventHandler
                     countingMashine.NewUserInput += Calculate.Multiplicate;               
                     countingMashine.NewUserInput += Calculate.Divide;
                     resultofOperations.AppendFormat(countingMashine.OnNewUserInput(user));
+                    //only contains return value of last Metod,its a very bad
                     break;
             }
 
@@ -80,7 +81,7 @@ namespace CalculateEventHandler
             //Calculate calculate = new Calculate(countingMashine);
 
 
-            //մնումա տեսնեմ թե ինչեմ անում մեթոդների վերադարձրած արժեքների հետ
+            
         }
     }
 }
