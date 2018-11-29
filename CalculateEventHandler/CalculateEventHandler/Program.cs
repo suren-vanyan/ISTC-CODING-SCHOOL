@@ -6,11 +6,7 @@ namespace CalculateEventHandler
 
     class Program
     {  
-        public static void CountingMashine()
-        {
-
-        }
-
+      
         static void Main(string[] args)
         {
                      
