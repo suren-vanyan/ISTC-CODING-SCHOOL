@@ -8,10 +8,13 @@ namespace CalculateEventHandler
     {
         public event MathematicalOperationsEventHandler NewUserInput;
 
-        public void OnNewUserInput(UserInputEventArgs e)
+        public string OnNewUserInput(UserInputEventArgs e)
         {
+           
+            string temp = string.Empty;
             if (NewUserInput != null)
-                NewUserInput.Invoke(e.FirstNumber, e.SecondNumber);
+             temp+= NewUserInput.Invoke(e.FirstNumber, e.SecondNumber)+Environment.NewLine;
+            return temp;
         }
     }
 }

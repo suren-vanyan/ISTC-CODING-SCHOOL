@@ -14,20 +14,20 @@ namespace CalculateEventHandler
             e.NewUserInput += Multiplicate;
         }
 
-        public string Add(float x, float y)
+        public static string Add(float x, float y)
         {
             Console.WriteLine("add the numbers");
 
             return (x + y).ToString();
         }
 
-        public string Subtract(float x, float y)
+        public static string Subtract(float x, float y)
         {
             Console.WriteLine("Subtract the numbers");
             return (x - y).ToString();
         }
 
-        public string Divide(float x, float y)
+        public static string Divide(float x, float y)
         {
             Console.WriteLine("Divide the numbers");
             double temp = 0;
@@ -43,7 +43,7 @@ namespace CalculateEventHandler
 
         }
 
-        public string Multiplicate(float x, float y)
+        public static string Multiplicate(float x, float y)
         {
             Console.WriteLine("Multiplicate the numbers");
             return (x * y).ToString() ;
