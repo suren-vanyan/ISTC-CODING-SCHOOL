@@ -7,35 +7,33 @@ namespace VehicleApp.Vehicles
     class Car : Vehicle
     {
         private readonly int _maxSpeed;
-        private  int _currentSpeed;
+        private int _currentSpeed;
 
-        public Car(int xCoord, int yCoord, int zCoord, int price, int speed, DateTime year, int maxSpeed, int currentSpeed)
-                    :base(xCoord,yCoord,zCoord,price,speed,year)
+        public Car(int xCoord, int yCoord, int zCoord, int price,  DateTime year, int maxSpeed, int currentSpeed)
+                    : base(xCoord, yCoord,default(int), zCoord, price,  year)
         {
-
-            Speed = currentSpeed;
             _maxSpeed = maxSpeed;
-        
+            CurrentSpeed = currentSpeed;
+            
+
         }
 
-        public override int Speed
+        public  int CurrentSpeed
         {
             get => _currentSpeed;
             set
             {
-                if (value > _maxSpeed)
-                {
-                    Console.WriteLine($"{this.GetType()} Maximum speed exceeded  (Override Speed Property)\n  ");
-                }
-              
-                else
+                if (value <= _maxSpeed)
                     _currentSpeed = value;
+
+                else
+                    throw new ArgumentException($"{this.GetType()} Maximum speed exceeded  (Override Speed Property)\n ");
             }
         }
 
         public override string ToString()
         {
-            return $"XCoord:{XCoord},YCoord:{YCoord},ZCoord:{ZCoord},TravelPrice:{Price},\nSpeed:{Speed}," +
+            return $"XCoord:{XCoord},YCoord:{YCoord},ZCoord:{ZCoord},TravelPrice:{Price},\nSpeed:{CurrentSpeed}," +
                 $"Year {YearOfIssue}, CurrentSpeed {_currentSpeed}\n";
         }
     }

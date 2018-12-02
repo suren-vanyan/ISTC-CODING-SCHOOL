@@ -27,7 +27,8 @@ namespace VehicleApp.Vehicles
             {
                 if (value < 10)
                 {
-                    Console.WriteLine("The number of passengers is less then minimal");
+                    // Console.WriteLine("The number of passengers is less then minimal");
+                    throw new ArgumentException("The number of passengers is less then minimal");
                 }
                 else
                     _numberOfPassenger = value;
