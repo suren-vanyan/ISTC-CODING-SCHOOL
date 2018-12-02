@@ -20,6 +20,7 @@ namespace CalculateUsingDelegate
         public static double Divide(double x, double y)
         {
             Console.WriteLine("Divide the numbers");
+         
             return x / y;
         }
 
@@ -32,6 +33,9 @@ namespace CalculateUsingDelegate
         public static double Module(double x, double y)
         {
             Console.WriteLine("Calculate Module");
+            if (y == 0)
+                throw new DivideByZeroException();
+           
             return x % y;
         }
 
@@ -44,7 +48,15 @@ namespace CalculateUsingDelegate
             CalculateHandler _div = Divide;
             CalculateHandler _mod = Module;
 
-            
+            try
+            {
+                 Console.WriteLine(_div(10, 0));
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             Console.WriteLine(_add.Invoke(50, 10.2)+"\n");
             Console.WriteLine(_mul.Invoke(80, 5)+"\n");
            //and so on
@@ -53,8 +65,8 @@ namespace CalculateUsingDelegate
             calculate += _sub;//when i use + = the following happens,called Delegate.Combine like next
 
             calculate = (CalculateHandler)Delegate.Combine(calculate, _mul,_div,_mod);//use params
-            calculate.Invoke(15, 7);
-
+            calculate.Invoke(15, 5);
+          
           
             double result = calculate(10.5, 6.3); // the return value is returned from the last method, all the other values is dropped
             Console.WriteLine(result+"\n");
