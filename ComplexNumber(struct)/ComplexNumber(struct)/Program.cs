@@ -58,22 +58,29 @@ namespace ComplexNumber
     class Program
     {        
         static void Main(string[] args)
-        {
+        {       
             HelperClass helper = new HelperClass();
-
-            Complex one = new Complex(1, 2);
+            Complex one = new Complex(1, 0);
             Console.WriteLine(one);
             Complex two = new Complex(3, -5);
-            Console.WriteLine(two);
 
-            Complex add = helper.ComplexAddition(one, two);
-            Console.WriteLine($"Addition {one}+{two}={add} ");
-            Complex sub = helper.ComplexSubtraction(one, two);
-            Console.WriteLine($"Subtract {one}-{two}={sub} ");
-            Complex div = helper.ComplexDivision(one, two);
-            Console.WriteLine($"Division {one}/{two}={div} ");
-            Complex mul = helper.ComplexMultiplication(one, two);
-            Console.WriteLine($"Multiplication {one}*{two}={mul} ");
+            Console.WriteLine(two);
+            try
+            {
+                Complex add = helper.ComplexAddition(one, two);
+                Console.WriteLine($"Addition {one}+{two}={add} ");
+                Complex sub = helper.ComplexSubtraction(one, two);
+                Console.WriteLine($"Subtract {one}-{two}={sub} ");
+                Complex div = helper.ComplexDivision(one, two);
+                Console.WriteLine($"Division {one}/{two}={div} ");
+                Complex mul = helper.ComplexMultiplication(one, two);
+                Console.WriteLine($"Multiplication {one}*{two}={mul} ");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+          
         }
     }
 }
