@@ -176,15 +176,15 @@ namespace Lesson1_Person
         }
 
         #endregion
-      
-       // Аpproach N:4
-       //is used as a default constructor
-        public Person(string firstName="firstName",string lastName="lastName",int age=default(int),int weight=default(int),Gender gender=default(Gender))
+
+        // Аpproach N:4
+        //is used as a default constructor
+        public Person(string firstName = "firstName", string lastName = "lastName", Gender gender = default(Gender), int age = default(int), int weight = default(int))
         {
             _firstName = firstName;
             _lastName = lastName;
             _age = age;
-            _weight=weight;
+            _weight = weight;
             _gender = gender;
         }
 
