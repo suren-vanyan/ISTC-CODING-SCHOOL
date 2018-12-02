@@ -6,13 +6,13 @@ namespace CalculateEventHandler
 {
     class Calculate
     {
-        public Calculate(CountingMashine e)
-        {
-            e.NewUserInput += Add;
-            e.NewUserInput += Subtract;
-            e.NewUserInput += Divide;
-            e.NewUserInput += Multiplicate;
-        }
+        //public Calculate(CountingMashine e)
+        //{
+        //    e.NewUserInput += Add;
+        //    e.NewUserInput += Subtract;
+        //    e.NewUserInput += Divide;
+        //    e.NewUserInput += Multiplicate;
+        //}
 
         public static string Add(float x, float y)
         {

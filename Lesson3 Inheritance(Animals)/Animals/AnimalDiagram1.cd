@@ -35,20 +35,6 @@
       <FileName>Animals\Herbivore\Squirrel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Animals.Omnivore.Omnivore" Collapsed="true">
-    <Position X="8.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Animals\Omnivore\Omnivore.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Animals.Omnivore.Man" Collapsed="true">
-    <Position X="8.25" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Animals\Omnivore\Man.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="Animals.Carnivore.Carnivore" Collapsed="true">
     <Position X="5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
@@ -75,6 +61,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Animals\Carnivore\Tiger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Animals.Omnivore.Omnivore" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Omnivore\Omnivore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Animals.Omnivore.Man" Collapsed="true">
+    <Position X="8.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Animals\Omnivore\Man.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
