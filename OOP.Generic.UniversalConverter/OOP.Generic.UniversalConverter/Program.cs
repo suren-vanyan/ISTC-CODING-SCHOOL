@@ -5,45 +5,34 @@ namespace UniversalConverter
     class Program
     {
         //գրել ունիվերսալ կոնվերտեր որը կփոխի string-ը ձեր ուզած տիպի
-      
-        public static object ChooseTypeForConvert<T>(Converter<T> converter)where T:struct
+
+        public static object ChooseTypeForConvert<T>(Converter<T> converter) where T : struct
         {
             object result = null;
             Console.Write("Input string for convert: ");
-           string input = Console.ReadLine();
-            result = converter.StringConvert(input);
-            return result;
+            string input = Console.ReadLine();
 
+            try
+            {
+                result = converter.StringConvert(input);
+            }
+            catch (InvalidCastException e) { Console.WriteLine(e.Message); }
+            catch (ArgumentException arg) { Console.WriteLine(arg.Message); }
+            catch (FormatException fm) { Console.WriteLine(fm.Message); }
+            catch (OverflowException ov) { Console.WriteLine(ov.Message); }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+
+            return result;
         }
 
         static void Main(string[] args)
         {
-            Converter<int> converter = new Converter<int>();
-           
-            try
-            {
-                Console.WriteLine(ChooseTypeForConvert(converter));
-            }
-            catch (InvalidCastException e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            catch(ArgumentException arg)
-            {
-                Console.WriteLine(arg.Message);
-            }
-            catch (FormatException fm)
-            {
-                Console.WriteLine(fm.Message);
-            }
-            catch (OverflowException ov)
-            {
-                Console.WriteLine(ov.Message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            Converter<int> converterInt = new Converter<int>();
+            Console.WriteLine(ChooseTypeForConvert(converterInt));
+
+            Converter<bool> convertBool = new Converter<bool>();
+            Console.WriteLine(ChooseTypeForConvert(convertBool));//and so forth
+
         }
     }
 }
