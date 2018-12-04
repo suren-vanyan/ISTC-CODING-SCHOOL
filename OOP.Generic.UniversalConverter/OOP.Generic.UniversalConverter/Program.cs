@@ -8,7 +8,7 @@ namespace UniversalConverter
 
         public static object ChooseTypeForConvert<T>(Converter<T> converter) where T : struct
         {
-            object result = null;
+            object result = null;//Change object
             Console.Write("Input string for convert: ");
             string input = Console.ReadLine();
 
@@ -16,11 +16,11 @@ namespace UniversalConverter
             {
                 result = converter.StringConvert(input);
             }
-            catch (InvalidCastException e) { Console.WriteLine(e.Message); }
-            catch (ArgumentException arg) { Console.WriteLine(arg.Message); }
-            catch (FormatException fm) { Console.WriteLine(fm.Message); }
-            catch (OverflowException ov) { Console.WriteLine(ov.Message); }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (InvalidCastException e) { Console.WriteLine(e.Message); }  //remove console
+            catch (ArgumentException arg) { Console.WriteLine(arg.Message); } //remove console
+            catch (FormatException fm) { Console.WriteLine(fm.Message); }     //remove console
+            catch (OverflowException ov) { Console.WriteLine(ov.Message); }   //remove console
+            catch (Exception ex) { Console.WriteLine(ex.Message); }           //remove console
 
             return result;
         }
