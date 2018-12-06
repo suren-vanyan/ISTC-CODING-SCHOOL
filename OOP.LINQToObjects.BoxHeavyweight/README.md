@@ -1,4 +1,4 @@
-## :muscle::point_right: Most powerful language in the world:point_left::muscle::stuck_out_tongue_winking_eye:  
+## :point_right: LINQ TO Objects
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Heavyweight">:muscle:heavyweight boxing champions:muscle:</a>
 </ul>
