@@ -3,10 +3,10 @@
 <li><a href="https://en.wikipedia.org/wiki/Heavyweight">:muscle:heavyweight boxing champions:muscle:</a>
 </ul>
 # :point_down::point_down:
-<p > <img src="https://e3.365dm.com/18/12/1096x616/skynews-deontay-wilder-tyson-fury_4506269.jpg?20181202064233" alt="C# logo" style="float:center; margin-right:25px;" width="200" height="200"></p><br/>
+<img class="irc_mi" src="https://e3.365dm.com/18/12/1096x616/skynews-deontay-wilder-tyson-fury_4506269.jpg?20181202064233" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" width="304" height="171" style="margin-top: 91px;" alt="Картинки по запросу deontay wilder vs tyson fury">
 
 # :point_up_2::point_up_2: 
 
  ## :blue_heart::green_heart:Do you love C#??:green_heart::blue_heart:
 
-<img class="irc_mi" src="https://e3.365dm.com/18/12/1096x616/skynews-deontay-wilder-tyson-fury_4506269.jpg?20181202064233" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)" width="304" height="171" style="margin-top: 91px;" alt="Картинки по запросу deontay wilder vs tyson fury">
+
