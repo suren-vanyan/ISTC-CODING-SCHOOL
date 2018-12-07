@@ -1,9 +1,10 @@
-## :muscle::point_right: Most powerful language in the world:point_left::muscle::stuck_out_tongue_winking_eye:  
+## :point_right: LINQ TO Objects
 
-# :point_down::point_down:
-<p > <img src="https://interset.co.th/wp-content/uploads/2018/07/27_c-sharp-logo-filled.png" alt="C# logo" style="float:center; margin-right:25px;" width="200" height="200"></p><br/>
+<a href="https://www.youtube.com/watch?v=6esTR1d4tgQ">:punch::muscle:Deontay Wilder Vs. Tyson Fury:punch::muscle:</a>
 
-# :point_up_2::point_up_2: 
+<img class="irc_mi" src="https://e3.365dm.com/18/12/1096x616/skynews-deontay-wilder-tyson-fury_4506269.jpg?20181202064233" onload="typeof google==='object'&amp;&amp;google.aft&amp;&amp;google.aft(this)"  style="margin-top: 91px;" alt="Картинки по запросу deontay wilder vs tyson fury">
 
- ## :blue_heart::green_heart:Do you love C#??:green_heart::blue_heart:
+
+
+
 
