@@ -20,7 +20,8 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             }
             Console.WriteLine();
         }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+
 
         public static void SortBoxersByAge(List<Boxer> boxersList)
         {
@@ -40,7 +41,8 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             var boxerSorting = Enumerable.Select(boxersList, (n => n.Age > 60 && n.Died == false));
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+
         public static void NonGenericCollection()
         {
             ArrayList boxersList = new ArrayList()
@@ -56,7 +58,9 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             IEnumerable<Boxer> boxers = boxersList.OfType<Boxer>();
             var boxerSortingByWins = boxers.Where(n => n.Wins > 40);
         }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+
+
         
         public static Array  GetNewAnonymousDataTypes(List<Boxer> boxersList)
         {
@@ -66,7 +70,9 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             return boxers;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+
+
         public static void GetCountFromQuery(List<HeavyweightChampions> heavyweightChampionsList)
         {
             int countbyNationality = (from champ in heavyweightChampionsList where champ.Nationality == "USA" select champ).Count();
@@ -75,7 +81,9 @@ namespace OOP.LINQToObjects.BoxHeavyweight
            
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
+        
+        
+
         public static void DisplayDiffAndIntersection(List<Boxer> boxersList,List<HeavyweightChampions> championsList)
         {
             //Array newchampionsList =( from champ in championsList select new { champ.FirstName, champ.LastName, champ.Nationality }).ToArray();
@@ -97,13 +105,36 @@ namespace OOP.LINQToObjects.BoxHeavyweight
 
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        public static void AggregateFunctions(List<Boxer> boxers)
+        
+
+
+        public static void StrongFunctions(List<Boxer> boxersList,List<HeavyweightChampions> championsList)
         {
+           // Query Expression Syntax
+            var selectedChampbySancBody = from champ in championsList
+                                          from body in champ.SancBody
+                                          where body == SanctioningBody.IBF 
+                                          select champ;
+
+            var selectName = from boxer in boxersList select boxer.FirstName;
+            var selectName2 = from boxer in boxersList select new { boxer.FirstName };//create anonymous type
+
+            //Method-Based Query Syntax 
+            var selectedChampbySancBody2 = championsList.SelectMany(n => n.SancBody,
+                                                                   (n, u) => new { Name = n.FirstName, SancBody = u })
+                                                                   .Where(n =>  n.SancBody == SanctioningBody.WBO)
+                                                                   .Select(u => u);
+            //use let
+            var selectChampions = from champ in championsList
+                                  let temp = "A" + champ.FirstName
+                                  select new { Name = temp, champ.LastName };
+
 
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
         static void Main(string[] args)
         {
             List<Boxer> boxersList = new List<Boxer>
@@ -132,8 +163,8 @@ namespace OOP.LINQToObjects.BoxHeavyweight
                     SancBody =new List<SanctioningBody>{SanctioningBody.WBA,SanctioningBody.WBC,SanctioningBody.IBF}},
                 new HeavyweightChampions{FirstName="Evander",LastName="Holyfield",Nationality="USA",
                     SancBody =new List<SanctioningBody>{SanctioningBody.WBA,SanctioningBody.IBF,SanctioningBody.WBC}},
-                new HeavyweightChampions{FirstName="Vladimir",LastName="Klitschko",Nationality="Ukraine",
-                    SancBody =new List<SanctioningBody>{SanctioningBody.WBA,SanctioningBody.IBF,SanctioningBody.WBO}},
+                new HeavyweightChampions{FirstName="Anthony",LastName="Joshua",Nationality="UK",
+                    SancBody =new List<SanctioningBody>{SanctioningBody.WBA,SanctioningBody.IBF,SanctioningBody.WBC}},
                 new HeavyweightChampions{FirstName="Joe",LastName="Frazier",Nationality="Ukraine",
                     SancBody =new List<SanctioningBody>{SanctioningBody.WBA,SanctioningBody.NYSAC,SanctioningBody.WBC}},
                   new HeavyweightChampions{FirstName="Mike",LastName="Tyson",Nationality="Ukraine",
@@ -141,7 +172,7 @@ namespace OOP.LINQToObjects.BoxHeavyweight
 
             };
 
-
+            StrongFunctions(boxersList, championsList);
             // Query expressions
             //Sort boxersList
             GetTallBoxers(boxersList);
