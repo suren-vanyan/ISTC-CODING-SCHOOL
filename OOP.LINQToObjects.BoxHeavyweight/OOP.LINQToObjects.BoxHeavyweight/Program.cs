@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -33,8 +34,27 @@ namespace OOP.LINQToObjects.BoxHeavyweight
                 Console.WriteLine($"FirstName:{item.FirstName},LastName:{item.LastName},Age:{item.Age}");
             }
             Console.WriteLine();
+
+            //use static Metod
+            var boxerSorting = Enumerable.Select(boxersList, (n => n.Age > 60 && n.Died == false));
         }
 
+
+        public static void NonGenericCollection()
+        {
+            ArrayList boxersList = new ArrayList()
+           {
+               new Boxer{FirstName="Muhammad",LastName="Ali",Age=74,Died=true,Height=191,Nationality="USA",Wins=56},
+               new Boxer{FirstName="George",LastName="Foreman",Age=69,Died=false,Height=192,Nationality="USA",Wins=76},
+               new Boxer{FirstName="Joe",LastName="Frazier",Age=67,Died=true,Height=182,Nationality="USA",Wins=32},
+               new Boxer{FirstName="Mike",LastName="Tyson",Age=52,Died=false,Height=178,Nationality="USA",Wins=50},
+               new Boxer{FirstName="Evander",LastName="Holyfield",Age=56,Died=false,Height=189,Nationality="USA",Wins=44},
+              
+           };
+
+            IEnumerable<Boxer> boxers = boxersList.OfType<Boxer>();
+            var boxerSortingByWins = boxers.Where(n => n.Wins > 40);
+        }
         static void Main(string[] args)
         {
             List<Boxer> boxersList = new List<Boxer>
@@ -76,8 +96,8 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             GetTallBoxers(boxersList);
 
             SortBoxersByAge(boxersList);
-          
 
+            NonGenericCollection();
           
 
         }
