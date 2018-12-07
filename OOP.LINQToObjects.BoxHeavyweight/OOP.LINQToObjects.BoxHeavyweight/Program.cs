@@ -66,6 +66,7 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             return boxers;
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static void GetCountFromQuery(List<HeavyweightChampions> heavyweightChampionsList)
         {
             int countbyNationality = (from champ in heavyweightChampionsList where champ.Nationality == "USA" select champ).Count();
@@ -74,13 +75,14 @@ namespace OOP.LINQToObjects.BoxHeavyweight
            
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
         public static void DisplayDiffAndIntersection(List<Boxer> boxersList,List<HeavyweightChampions> championsList)
         {
             //Array newchampionsList =( from champ in championsList select new { champ.FirstName, champ.LastName, champ.Nationality }).ToArray();
             //Array newBoxersList = (from boxer in boxersList select new { boxer}).ToArray();
             //var diff = (from boxer in newBoxersList select boxer).C(from champion in newchampionsList select champion);
             List<Boxer> firstBoxersList = new List<Boxer> { boxersList[0], boxersList[1], boxersList[2] };
-            List<Boxer> secondBoxersList = new List<Boxer> { boxersList[3], boxersList[0], boxersList[5] };
+            List<Boxer> secondBoxersList = new List<Boxer> { boxersList[3], boxersList[0], boxersList[4] };
     
             var except = (from n in firstBoxersList select n).Except(from n in secondBoxersList select n);//result Forman,Freizer
           
@@ -89,8 +91,19 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             var intersect = firstBoxersList.Select(n => n).Intersect(secondBoxersList.Select(n => n));
             intersect.ToList().ForEach(n => Console.WriteLine(n));
 
+            var union = (from n in firstBoxersList select n).Union(from n in secondBoxersList select n);
+
+
 
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public static void AggregateFunctions(List<Boxer> boxers)
+        {
+
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         static void Main(string[] args)
         {
             List<Boxer> boxersList = new List<Boxer>
@@ -128,23 +141,64 @@ namespace OOP.LINQToObjects.BoxHeavyweight
 
             };
 
+
+            // Query expressions
             //Sort boxersList
-            //GetTallBoxers(boxersList);
+            GetTallBoxers(boxersList);
 
-            //SortBoxersByAge(boxersList);
+            SortBoxersByAge(boxersList);
 
-            //NonGenericCollection();
+            NonGenericCollection();
 
             ////this is a bad approach
-            //var boxersListToArray = GetNewAnonymousDataTypes(boxersList);
-            //foreach (var item in boxersListToArray)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            var boxersListToArray = GetNewAnonymousDataTypes(boxersList);
+            foreach (var item in boxersListToArray)
+            {
+                Console.WriteLine(item);
+            }
 
-            //GetCountFromQuery(championsList);
+            GetCountFromQuery(championsList);
 
             DisplayDiffAndIntersection(boxersList, championsList);
+
+
+            // The truth of the matter, however, is that when compiled, 
+            //the C# compiler actually translates all C# LINQ  operators into calls on methods of the Enumerable class.
+
+            // LINQ Query Statements
+            QueryStringsWithEnumerableAndLambdas(boxersList,championsList);
+        }
+
+        public static void QueryStringsWithEnumerableAndLambdas(List<Boxer> boxersList,List<HeavyweightChampions> championsList)
+        {
+            var newBoxersList = boxersList.Where(n => n.Age > 50).OrderBy(n => n.FirstName).Select(n=>new {  n.FirstName,n.LastName });//create anonymous
+
+            var boxersgroupBy = from boxer in boxersList
+                                where boxer.Age > 20 && boxer.Age < 40
+                                group boxer by boxer.Nationality;
+
+            var boxersgroupBy2 = boxersList.Where(n => n.Age < 40).GroupBy(n => n.Nationality);
+
+            foreach (IGrouping<string,Boxer> group in boxersgroupBy)
+            {
+                Console.WriteLine(group.Key);
+                foreach (var item in group)
+                {
+                    Console.WriteLine(item);//need override Tostring
+                }
+            }
+
+            //cretaet new anonymous type Use Join and into keyword
+            var jointwoLists = from boxer in boxersList
+                            join champ in championsList
+                            on boxer.LastName equals champ.LastName
+                            select new { boxer.FirstName, champ.LastName, champ.SancBody, boxer.Wins }
+                         into temp
+                            where temp.Wins > 40
+                            select temp;
+
+           
+
         }
     }
 }
