@@ -1,10 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace OOP.LINQToObjects.BoxHeavyweight
 {
     class Program
     {
+        public static void GetTallBoxers(List<Boxer> boxersList)
+        {
+            // deferred execution
+            var boxerSortingByHeight = from i in boxersList where i.Height > 200 select i;//Sorting boxer by Height 
+
+            // immediate execution
+            List<Boxer> boxerSortingByHeightToList = boxersList.Where(n => n.Height > 200).ToList<Boxer>();//ToList();
+            foreach (var item in boxerSortingByHeightToList)
+            {
+                Console.WriteLine($"FirstName:{item.FirstName},LastName:{item.LastName},Height:{item.Height}");
+            }
+            Console.WriteLine();
+        }
+
+        public static void SortBoxersByAge(List<Boxer> boxersList)
+        {
+            //Sorting by Age,start sort by  ascending (by default),after descending
+            // deferred execution
+            var boxerSortingByAge = boxersList.Where(n => n.Age > 50).OrderBy(n => n.FirstName).OrderByDescending(n=>n.LastName);
+
+            //immediate execution
+            Boxer[] boxerSortingByAgeToArray = boxersList.Where(n => n.Age > 55).OrderBy(n => n.Age).ToArray<Boxer>();
+            foreach (var item in boxerSortingByAgeToArray)
+            {
+                Console.WriteLine($"FirstName:{item.FirstName},LastName:{item.LastName},Age:{item.Age}");
+            }
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
             List<Boxer> boxersList = new List<Boxer>
@@ -25,7 +55,7 @@ namespace OOP.LINQToObjects.BoxHeavyweight
 
             List<HeavyweightChampions> championsList = new List<HeavyweightChampions>
             {
-                 new HeavyweightChampions{FirstName="Vladimir",LastName="Klitschko",Nationality="Ukraine",
+                 new HeavyweightChampions{FirstName="Muhammad",LastName="Ali",Nationality="Ukraine",
                     SancBody =new List<SanctioningBody>{SanctioningBody.WBC,SanctioningBody.WBA,SanctioningBody.NYSAC}},
                 new HeavyweightChampions{FirstName="Vladimir",LastName="Klitschko",Nationality="Ukraine",
                     SancBody =new List<SanctioningBody>{SanctioningBody.WBA,SanctioningBody.IBF,SanctioningBody.WBO}},
@@ -41,6 +71,15 @@ namespace OOP.LINQToObjects.BoxHeavyweight
                     SancBody =new List<SanctioningBody>{SanctioningBody.WBA,SanctioningBody.WBC,SanctioningBody.IBF}},
 
             };
+
+            //Sort boxersList
+            GetTallBoxers(boxersList);
+
+            SortBoxersByAge(boxersList);
+          
+
+          
+
         }
     }
 }
