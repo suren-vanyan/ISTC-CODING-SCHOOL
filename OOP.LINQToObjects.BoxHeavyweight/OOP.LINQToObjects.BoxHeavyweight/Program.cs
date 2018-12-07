@@ -20,6 +20,7 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             }
             Console.WriteLine();
         }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         public static void SortBoxersByAge(List<Boxer> boxersList)
         {
@@ -39,7 +40,7 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             var boxerSorting = Enumerable.Select(boxersList, (n => n.Age > 60 && n.Died == false));
         }
 
-
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         public static void NonGenericCollection()
         {
             ArrayList boxersList = new ArrayList()
@@ -54,6 +55,41 @@ namespace OOP.LINQToObjects.BoxHeavyweight
 
             IEnumerable<Boxer> boxers = boxersList.OfType<Boxer>();
             var boxerSortingByWins = boxers.Where(n => n.Wins > 40);
+        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        public static Array  GetNewAnonymousDataTypes(List<Boxer> boxersList)
+        {
+
+            var boxers = (from boxer in boxersList select new { boxer.FirstName, boxer.LastName, boxer.Nationality }).ToArray();
+           
+            return boxers;
+        }
+
+        public static void GetCountFromQuery(List<HeavyweightChampions> heavyweightChampionsList)
+        {
+            int countbyNationality = (from champ in heavyweightChampionsList where champ.Nationality == "USA" select champ).Count();
+            Console.WriteLine(countbyNationality);
+
+           
+        }
+
+        public static void DisplayDiffAndIntersection(List<Boxer> boxersList,List<HeavyweightChampions> championsList)
+        {
+            //Array newchampionsList =( from champ in championsList select new { champ.FirstName, champ.LastName, champ.Nationality }).ToArray();
+            //Array newBoxersList = (from boxer in boxersList select new { boxer}).ToArray();
+            //var diff = (from boxer in newBoxersList select boxer).C(from champion in newchampionsList select champion);
+            List<Boxer> firstBoxersList = new List<Boxer> { boxersList[0], boxersList[1], boxersList[2] };
+            List<Boxer> secondBoxersList = new List<Boxer> { boxersList[3], boxersList[0], boxersList[5] };
+    
+            var except = (from n in firstBoxersList select n).Except(from n in secondBoxersList select n);//result Forman,Freizer
+          
+            var except2 = (from n in secondBoxersList select n).Except(from n in firstBoxersList select n);
+           
+            var intersect = firstBoxersList.Select(n => n).Intersect(secondBoxersList.Select(n => n));
+            intersect.ToList().ForEach(n => Console.WriteLine(n));
+
+
         }
         static void Main(string[] args)
         {
@@ -93,13 +129,22 @@ namespace OOP.LINQToObjects.BoxHeavyweight
             };
 
             //Sort boxersList
-            GetTallBoxers(boxersList);
+            //GetTallBoxers(boxersList);
 
-            SortBoxersByAge(boxersList);
+            //SortBoxersByAge(boxersList);
 
-            NonGenericCollection();
-          
+            //NonGenericCollection();
 
+            ////this is a bad approach
+            //var boxersListToArray = GetNewAnonymousDataTypes(boxersList);
+            //foreach (var item in boxersListToArray)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //GetCountFromQuery(championsList);
+
+            DisplayDiffAndIntersection(boxersList, championsList);
         }
     }
 }
