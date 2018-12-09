@@ -36,9 +36,30 @@ namespace OOP.OperatorOverloading.Task6
 
 
             //Unary Operators  --
-            Point incrementOp = pointOne++;
+            Point PostfixIncrement = pointOne++;
+            Point PrefixIncrement = ++pointOne;
             //++
-            Point decrementOp = pointTwo--;
+            Point postfixDecrement = pointTwo--;
+            Point prefixDecrement = --pointTwo;
+
+
+            //==
+            bool result = pointOne == pointTwo;
+            Console.WriteLine(result);
+            //!=
+            bool result2 = pointOne != pointTwo;
+            Console.WriteLine(result2);
+
+            //>,<,>=,<=
+            result = pointOne > pointTwo;
+            result = pointOne <= pointTwo;
+
+            //  Custom Type Conversions explicit and implicit keywords
+            Rectangle rectangle = new Rectangle(10, 4);
+            Console.WriteLine(rectangle);
+            rectangle.Draw();
+
+            Square square = (Square)rectangle;
         }
     }
 }
