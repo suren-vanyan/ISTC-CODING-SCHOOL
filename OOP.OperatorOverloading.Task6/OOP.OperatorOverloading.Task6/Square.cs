@@ -8,7 +8,7 @@ namespace OOP.OperatorOverloading.Task6
     {
         public int Length { get; set; }
 
-        public Square(int length):this()
+        public Square(int length) : this()
         {
             Length = length;
         }
@@ -27,10 +27,19 @@ namespace OOP.OperatorOverloading.Task6
         }
         public override string ToString() => $"[Length = {Length}]";
 
+
         public static explicit operator Square(Rectangle r)
         {
-            Square s = new Square() {Length=r.Height };
+            Square s = new Square() { Length = r.Height };
             return s;
         }
+
+        public static explicit operator Square(int sideLength)
+        {
+            Square sq = new Square();
+            sq.Length = sideLength;
+            return sq;
+        }
+        public static explicit operator int(Square sq) => sq.Length;
     }
 }

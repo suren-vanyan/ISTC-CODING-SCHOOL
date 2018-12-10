@@ -4,14 +4,18 @@ namespace OOP.OperatorOverloading.Task6
 {
     class Program
     {
-      
+        static void DrawSquare(Square sq)
+        {
+            Console.WriteLine(sq.ToString());
+            sq.Draw();
+        }
         static void Main(string[] args)
         {
-            Point pointOne = new Point(new Random().Next(1,20),new Random().Next(1,30));
+            Point pointOne = new Point(new Random().Next(1, 20), new Random().Next(1, 30));
             Point pointTwo = new Point(new Random().Next(1, 40), new Random().Next(1, 50));
-           // Print(pointOne, pointTwo);
+            // Print(pointOne, pointTwo);
 
-           //+
+            //+
             Point additionPoints = pointOne + pointTwo;
             additionPoints = additionPoints + 2;
 
@@ -60,6 +64,19 @@ namespace OOP.OperatorOverloading.Task6
             rectangle.Draw();
 
             Square square = (Square)rectangle;
+            square.Draw();
+
+            DrawSquare((Square)rectangle);
+            
+
+            Square square2 = (Square)90;
+
+            //implicit
+            Rectangle rectImplicit = square2;
+            //explicit
+            Rectangle rectExplicit = (Rectangle)square;
+
+            Console.ReadLine();
         }
     }
 }

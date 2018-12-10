@@ -25,5 +25,13 @@ namespace OOP.OperatorOverloading.Task6
             }
         }
         public override string ToString() => $"[Width = {Width}; Height = {Height}]";
+
+        public static implicit operator Rectangle(Square sq)
+        {
+            Rectangle rectangle = new Rectangle();
+            rectangle.Height = sq.Length;
+            rectangle.Width = sq.Length * 2;
+            return rectangle;
+        }
     }
 }
