@@ -80,13 +80,15 @@ namespace OOP.IndexerMetods.List_Task7
 
             int tempindex = (int)(object)index;
             T[] temporary = new T[_length];
-            int currentIndex = 0;      
+            int currentIndex = -1;      
             for (int i = 0; i < temporary.Length; i++)
             {
                 if (i == tempindex)
                     continue;
-                temporary[currentIndex++] = array[i];
+                temporary[++currentIndex] = array[i];
             }
+
+            array = temporary;
         }
 
        
