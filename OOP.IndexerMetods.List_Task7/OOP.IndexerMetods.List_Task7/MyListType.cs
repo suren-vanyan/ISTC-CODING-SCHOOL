@@ -7,7 +7,7 @@ namespace OOP.IndexerMetods.List_Task7
     class MyListType<T> : IMyListType<T>
     {
         private T[] array;
-      private  int _length = 0;
+        private int _length = 0;
         public MyListType()
         {
             array = new T[0];
@@ -23,19 +23,19 @@ namespace OOP.IndexerMetods.List_Task7
 
             set
             {
-             
+
                 if (index < 0 || index >= _length)
                     throw new IndexOutOfRangeException();
-                 array[index]=value;
+                array[index] = value;
             }
-  
+
             get
             {
                 if (index < 0 || index >= _length)
                     throw new IndexOutOfRangeException();
                 return array[index];
             }
-                
+
         }
 
         public int Count => array.Length;
@@ -80,7 +80,7 @@ namespace OOP.IndexerMetods.List_Task7
 
             int tempindex = (int)(object)index;
             T[] temporary = new T[_length];
-            int currentIndex = -1;      
+            int currentIndex = -1;
             for (int i = 0; i < temporary.Length; i++)
             {
                 if (i == tempindex)
@@ -91,6 +91,6 @@ namespace OOP.IndexerMetods.List_Task7
             array = temporary;
         }
 
-       
+
     }
 }
