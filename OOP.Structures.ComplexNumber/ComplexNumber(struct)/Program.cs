@@ -5,7 +5,7 @@ namespace ComplexNumber
 {
     class HelperClass
     {
-        public Complex ComplexSubtraction(Complex x,Complex y)
+        public Complex ComplexSubtraction(Complex x, Complex y)
         {
             return new Complex(x.RealNumber - y.RealNumber, y.RealNumber - y.ImaginaryUnit);
         }
@@ -19,7 +19,7 @@ namespace ComplexNumber
         {
             return new Complex(x.RealNumber * y.RealNumber - x.ImaginaryUnit * y.ImaginaryUnit,
                 x.RealNumber * y.ImaginaryUnit + y.RealNumber * x.ImaginaryUnit);
-           
+
         }
 
         public Complex ComplexDivision(Complex x, Complex y)
@@ -30,7 +30,7 @@ namespace ComplexNumber
 
             double divReal = (x.RealNumber * y.RealNumber + x.ImaginaryUnit * y.ImaginaryUnit) /  //a·c+b·d  
                 (y.RealNumber * y.RealNumber + y.ImaginaryUnit * y.ImaginaryUnit);// c′2 + d′2
-            double divImaginary = (  x.ImaginaryUnit* y.RealNumber - x.RealNumber * y.ImaginaryUnit) / //bc-ad
+            double divImaginary = (x.ImaginaryUnit * y.RealNumber - x.RealNumber * y.ImaginaryUnit) / //bc-ad
                 (y.RealNumber * y.RealNumber + y.ImaginaryUnit * y.ImaginaryUnit);
             return new Complex(divReal, divImaginary);
         }
@@ -40,15 +40,15 @@ namespace ComplexNumber
     {
         private readonly double _realNumber;
         private readonly double _imaginaryUnit;
-        public Complex(double realNumber,double imaginaryUnit)
+        public Complex(double realNumber, double imaginaryUnit)
         {
             _realNumber = realNumber;
             _imaginaryUnit = imaginaryUnit;
         }
-      
-        public double ImaginaryUnit { get { return _imaginaryUnit; }  }
 
-        public double RealNumber { get { return _realNumber; }  }
+        public double ImaginaryUnit { get { return _imaginaryUnit; } }
+
+        public double RealNumber { get { return _realNumber; } }
 
         public override string ToString()
         {
@@ -56,9 +56,9 @@ namespace ComplexNumber
         }
     }
     class Program
-    {        
+    {
         static void Main(string[] args)
-        {       
+        {
             HelperClass helper = new HelperClass();
             Complex one = new Complex(1, 0);
             Console.WriteLine(one);
@@ -80,7 +80,7 @@ namespace ComplexNumber
             {
                 Console.WriteLine(e.Message);
             }
-          
+
         }
     }
 }
