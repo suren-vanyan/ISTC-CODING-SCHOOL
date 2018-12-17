@@ -8,7 +8,6 @@ namespace AbstractHandlerApp
     {
         public DOCHandler(string fileName):base(fileName)
         {
-
         }
         public override void Change()
         {
