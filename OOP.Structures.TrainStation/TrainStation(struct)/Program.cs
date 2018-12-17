@@ -8,6 +8,7 @@ namespace TrainStation
     {
         static void Main(string[] args)
         {     
+
             Console.WriteLine("To add a new train press key 'a'");
             Console.WriteLine("when the station is full, press another character ");
             TrainStation trainStation = new TrainStation();
