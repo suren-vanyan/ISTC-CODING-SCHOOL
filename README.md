@@ -9,8 +9,6 @@
 <p align="Left"><img src="https://images-na.ssl-images-amazon.com/images/I/41zZ5aN3ypL._SX258_BO1,204,203,200_.jpg" ></p>
 
 
-## :muscle: Most powerful language in the world:muscle: 
 
-<p > <img src="https://interset.co.th/wp-content/uploads/2018/07/27_c-sharp-logo-filled.png" alt="C# logo" style="float:center; margin-right:25px;" width="200" height="200"></p><br/>
 
 
